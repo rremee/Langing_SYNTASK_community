@@ -1,0 +1,21 @@
+@use "../libs/pxtorem.scss" as *;
+
+// Font
+$fontFamily: "";
+$fontSize: rem(16);
+
+// Colors
+$mainColor: #000;
+
+// Page, container size
+$minWidth: 320; // Minimum page width
+$maxWidth: 1920; // Maximum page width
+$maxWidthContainer: 1280; // Width of the container (without paddings)
+$containerPadding: 30; // Container padding
+$containerWidth: $maxWidthContainer + $containerPadding; // Width of the container
+
+// Breakpoints
+$pc: rem($containerWidth); // PCs, laptops, some tablets in a horizontal position
+$tablet: rem(991.98); // Tablets, some phones in a horizontal position
+$mobile: rem(767.98); // Phones L
+$mobileSmall: rem(359.98); // Phones S
