@@ -1,6 +1,14 @@
 @use "../libs/pxtorem.scss" as *;
 @use "../base/vars.scss" as *;
 
+
+
+body {
+    font-family: $fontFamily;
+    background-color: $bgColor;
+    color: $whiteColor;
+}
+
 .wrapper {
     min-height: 100%;
     display: flex;
