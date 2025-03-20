@@ -1,0 +1,49 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+.button {
+	width: rem(268);
+	padding: rem(16) rem(32);
+	background: linear-gradient(180deg, #ff7043 0%, #ff4929 100%);
+	color: $whiteColor;
+	font-size: rem(18);
+	font-weight: 400;
+	line-height: 111%;
+	text-align: center;
+	border-radius: rem(68);
+	text-transform: capitalize;
+	cursor: pointer;
+	transition: 0.4s all;
+	&--discord {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		justify-content: center;
+		background: linear-gradient(
+				180deg,
+				rgba(190, 190, 190, 0.15),
+				rgba(255, 255, 255, 0) 84%
+			),
+			rgb(87, 101, 242);
+        &-small {
+            font-weight: 700;
+            font-size: 1rem;
+            width: rem(141);
+            padding: rem(16) rem(26);
+        }
+	}
+    &--sign {
+        font-weight: 700;
+        font-size: 1rem;
+        padding: rem(16) rem(26);
+        background: $darkGreyColor;
+        width: rem(176);
+        &-white {
+            background: $whiteColor;
+            border: 1px solid $darkGreyColor;
+            width: rem(277);
+            color: $bgColor;
+            font-weight: 500;
+        }
+    }
+}
