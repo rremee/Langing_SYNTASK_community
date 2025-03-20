@@ -6,6 +6,7 @@ $fontSize: rem(16);
 
 // Colors
 $whiteColor: #fff;
+$whiteDarkerColor: #F5F5F5;
 $bgColor: #151515;
 $rateColor: #FEC84B;
 $discordColor: #5765F2;
@@ -15,7 +16,7 @@ $mainOrangeColor: #FF4A2A;
 // Page, container size
 $minWidth: 320; // Minimum page width
 $maxWidth: 1920; // Maximum page width
-$maxWidthContainer: 1280; // Width of the container (without paddings)
+$maxWidthContainer: 1318; // Width of the container (without paddings)
 $containerPadding: 30; // Container padding
 $containerWidth: $maxWidthContainer + $containerPadding; // Width of the container
 

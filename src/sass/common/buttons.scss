@@ -7,7 +7,6 @@
 	background: linear-gradient(180deg, #ff7043 0%, #ff4929 100%);
 	color: $whiteColor;
 	font-size: rem(18);
-	font-weight: 400;
 	line-height: 111%;
 	text-align: center;
 	border-radius: rem(68);
@@ -25,25 +24,25 @@
 				rgba(255, 255, 255, 0) 84%
 			),
 			rgb(87, 101, 242);
-        &-small {
-            font-weight: 700;
-            font-size: 1rem;
-            width: rem(141);
-            padding: rem(16) rem(26);
-        }
+		&-small {
+			font-weight: 700;
+			font-size: 1rem;
+			width: rem(141);
+			padding: rem(16) rem(26);
+		}
 	}
-    &--sign {
-        font-weight: 700;
-        font-size: 1rem;
-        padding: rem(16) rem(26);
-        background: $darkGreyColor;
-        width: rem(176);
-        &-white {
-            background: $whiteColor;
-            border: 1px solid $darkGreyColor;
-            width: rem(277);
-            color: $bgColor;
-            font-weight: 500;
-        }
-    }
+	&--sign {
+		font-weight: 700;
+		font-size: 1rem;
+		padding: rem(16) rem(26);
+		background: $darkGreyColor;
+		width: rem(176);
+		&-white {
+			background: $whiteColor;
+			border: 1px solid $darkGreyColor;
+			width: rem(277);
+			color: $bgColor;
+			font-weight: 500;
+		}
+	}
 }

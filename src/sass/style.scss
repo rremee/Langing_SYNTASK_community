@@ -1,7 +1,9 @@
-@use "../sass/base/null.scss";
-@use "../sass/libs/pxtorem.scss";
-@use "../sass/fonts/fonts.scss";
-@use "../sass/base/starter.scss";
+@use "/src/sass/base/null.scss";
+@use "/src/sass/libs/pxtorem.scss";
+@use "/src/sass/fonts/fonts.scss";
+@use "/src/sass/base/starter.scss";
 
-@use "../sass/common/buttons.scss";
-@use "../sass/common/titles.scss";
+@use "/src/sass/common/buttons.scss";
+@use "/src/sass/common/titles.scss";
+
+@use "/src/sass/blocks/header.scss";
