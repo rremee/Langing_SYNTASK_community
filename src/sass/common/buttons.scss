@@ -13,6 +13,11 @@
 	text-transform: capitalize;
 	cursor: pointer;
 	transition: 0.4s all;
+	@media screen and (min-width: $tablet) {
+		&:hover {
+			background: linear-gradient(180deg, #fa4e1a 0%, #a01b04 100%);
+		}
+	}
 	&--discord {
 		display: flex;
 		align-items: center;
@@ -30,6 +35,16 @@
 			width: rem(141);
 			padding: rem(16) rem(26);
 		}
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				background: linear-gradient(
+						180deg,
+						rgba(190, 190, 190, 0.15),
+						rgba(255, 255, 255, 0) 84%
+					),
+					rgb(101, 24, 243);
+			}
+		}
 	}
 	&--sign {
 		font-weight: 700;
@@ -37,6 +52,12 @@
 		padding: rem(16) rem(26);
 		background: $darkGreyColor;
 		width: rem(176);
+        @media screen and (min-width: $tablet) {
+            &:hover {
+		        background: $whiteDarkerColor;
+		        color: $darkGreyColor;
+            }
+        }
 		&-white {
 			background: $whiteColor;
 			border: 1px solid $darkGreyColor;
