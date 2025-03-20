@@ -1,0 +1,18 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+.title {
+    color: $whiteColor;
+    font-family: "Manrope", sans-serif;
+    font-size: rem(48);
+    font-weight: 400;
+    &--center {
+        text-align: center;
+    }
+}
+
+.label {
+    font-weight: 400;
+    line-height: 1.5;
+    color: #f99280;
+}
