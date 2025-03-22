@@ -1,13 +1,15 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
+@use "../animation/animation.scss" as *;
+
 
 .header {
+	border-bottom: 1px solid rgba(254, 237, 236, 0.09);
 	&__container {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: rem(15) rem(9);
-		border-bottom: 1px solid rgba(254, 237, 236, 0.09);
 	}
 
 	&__main {
@@ -68,6 +70,8 @@
 			width: rem(8);
 			height: rem(8);
 			position: relative;
+			
+			// animation: circleScale 5s infinite linear;
 			&::before {
 				content: "";
 				position: absolute;
@@ -78,6 +82,7 @@
 				left: 50%;
 				transform: translate(-50%, -50%);
 				border-radius: 50%;
+				animation: circleScale 3.2s infinite linear;
 			}
 		}
 	}
