@@ -1,5 +1,6 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
+@use "../animation/animation.scss" as *;
 
 .button {
 	width: rem(268);
@@ -13,9 +14,15 @@
 	text-transform: capitalize;
 	cursor: pointer;
 	transition: 0.4s all;
+	img {
+		transition: 0.4s all;
+	}
 	@media screen and (min-width: $tablet) {
 		&:hover {
 			background: linear-gradient(180deg, #fa4e1a 0%, #a01b04 100%);
+			img {
+				animation: shakeImage 0.2s infinite;
+			}
 		}
 	}
 	&--discord {
@@ -52,12 +59,12 @@
 		padding: rem(16) rem(26);
 		background: $darkGreyColor;
 		width: rem(176);
-        @media screen and (min-width: $tablet) {
-            &:hover {
-		        background: $whiteDarkerColor;
-		        color: $darkGreyColor;
-            }
-        }
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				background: $whiteDarkerColor;
+				color: $darkGreyColor;
+			}
+		}
 		&-white {
 			background: $whiteColor;
 			border: 1px solid $darkGreyColor;
