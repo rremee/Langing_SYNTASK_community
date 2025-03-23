@@ -1,5 +1,5 @@
 {
-  "name": "syntask_community",
+  "name": "syntask",
   "version": "1.0.0",
   "description": "Landing page - Syntask",
   "main": "vite.config.js",

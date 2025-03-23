@@ -15,7 +15,7 @@
 	&__main {
 		display: flex;
 		align-items: center;
-		column-gap: rem(28);
+		column-gap: clamp(rem(14), 2.5vw, rem(28));
 	}
 
 	&__logo {
@@ -70,8 +70,6 @@
 			width: rem(8);
 			height: rem(8);
 			position: relative;
-			
-			// animation: circleScale 5s infinite linear;
 			&::before {
 				content: "";
 				position: absolute;
@@ -90,20 +88,20 @@
 	&__navigation {
 		display: flex;
 		align-items: center;
-		column-gap: rem(28);
+		column-gap: clamp(rem(14), 2.5vw, rem(28));
 	}
 
 	&__actions {
 		display: flex;
 		align-items: center;
-		column-gap: rem(16);
+		column-gap: clamp(rem(8), 2vw, rem(16));
 	}
 }
 .menu {
 	&__list {
 		display: flex;
 		align-items: center;
-		column-gap: rem(43);
+		column-gap: clamp(rem(20), 3.5vw, rem(43));
 	}
 
 	&__link {
@@ -114,6 +112,20 @@
 		@media screen and (min-width: $tablet) {
 			&:hover {
 				color: $mainOrangeColor;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.header {
+		&__counter {
+			width: auto;
+			font-size: 0;
+			column-gap: rem(8);
+			&::after {
+				content: "458";
+				font-size: rem(14);
 			}
 		}
 	}

@@ -24,6 +24,8 @@ body {
 }
 
 [class*="__container"] {
+    max-width: clamp(320px, 100vw - calc(2*15px), 1600px);
     margin: 0 auto;
-    max-width: rem($containerWidth);
+    padding: 0 clamp(15px, 2vw, 30px);
+    width: 100%;
 }
