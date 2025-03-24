@@ -2,7 +2,6 @@
 @use "../libs/pxtorem.scss" as *;
 @use "../animation/animation.scss" as *;
 
-
 .header {
 	border-bottom: 1px solid rgba(254, 237, 236, 0.09);
 	&__container {
@@ -26,6 +25,7 @@
 		position: relative;
 		padding-left: rem(9);
 		transition: 0.4s all;
+		z-index: 10;
 		&::before {
 			content: "";
 			position: absolute;
@@ -36,14 +36,14 @@
 			top: 50%;
 			left: rem(-1);
 			transform: translateY(-50%);
-            transition: .4s all;
+			transition: 0.4s all;
 		}
 		@media screen and (min-width: $tablet) {
 			&:hover {
 				color: $mainOrangeColor;
 				&::before {
 					background: $mainOrangeColor;
-                    left: rem(-5);
+					left: rem(-5);
 				}
 			}
 		}
@@ -90,12 +90,6 @@
 		align-items: center;
 		column-gap: clamp(rem(14), 2.5vw, rem(28));
 	}
-
-	&__actions {
-		display: flex;
-		align-items: center;
-		column-gap: clamp(rem(8), 2vw, rem(16));
-	}
 }
 .menu {
 	&__list {
@@ -117,16 +111,114 @@
 	}
 }
 
-@media screen and (max-width: $tablet) {
+.actions-header {
+	display: flex;
+	align-items: center;
+	column-gap: clamp(rem(8), 2vw, rem(16));
+}
+
+.burger {
+	display: none;
+}
+
+@media screen and (max-width: $laptop) {
 	.header {
 		&__counter {
-			width: auto;
-			font-size: 0;
-			column-gap: rem(8);
-			&::after {
-				content: "458";
-				font-size: rem(14);
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.burger {
+		z-index: 10;
+		display: block;
+		position: relative;
+		width: rem(26);
+		height: rem(26);
+		cursor: pointer;
+		transition: all .3s ease-in-out;
+		span {
+			width: rem(10);
+			height: rem(10);
+			position: absolute;
+			border-radius: 50%;
+			background-color: $whiteDarkerColor;
+			transition: transform .4s ease-in-out;
+			&:nth-child(1) {
+				top: 0;
+				left: 0;
+			}
+			&:nth-child(2) {
+				top: 0;
+				right: 0;
+			}
+			&:nth-child(3) {
+				left: 0;
+				bottom: 0;
+			}
+			&:nth-child(4) {
+				right: 0;
+				bottom: 0;
 			}
 		}
+	}
+	.header {
+		&.header__navigation_active {
+			.burger {
+				transform: rotate(45deg);
+				span {
+					&:nth-child(1) {
+						transform:  translate(2px, 2px);
+					}
+					&:nth-child(2) {
+						transform:  translate(-2px, 2px);
+					}
+					&:nth-child(3) {
+						transform:  translate(2px, -2px);
+					}
+					&:nth-child(4) {
+						transform:  translate(-2px, -2px);
+					}
+				}
+			}
+			.header__navigation {
+				right: 0;
+			}
+		}
+		&__counter {
+			display: none;
+		}
+		&__navigation {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $bgColor;
+			padding: rem(100) rem(30) rem(30) rem(30);
+			transition: all 0.3s ease;
+			overflow: auto;
+			flex-direction: column;
+			row-gap: rem(38);
+			right: -100%;
+		}
+	}
+	.menu {
+		&__list {
+			flex-direction: column;
+		}
+		&__item {
+			&:not(:last-child) {
+				margin-bottom: rem(32);
+			}
+		}
+		&__link {
+			font-size: rem(34);
+		}
+	}
+	
+	.actions-header {
+		flex-direction: column;
+		row-gap: rem(16);
 	}
 }

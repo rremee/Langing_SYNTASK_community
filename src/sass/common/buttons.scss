@@ -74,3 +74,9 @@
 		}
 	}
 }
+
+@media screen and (max-width: $tablet) {
+	.button {
+		width: 140%;
+	}
+}
