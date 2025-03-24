@@ -3,7 +3,7 @@
 @use "../animation/animation.scss" as *;
 
 .header {
-	border-bottom: 1px solid rgba(254, 237, 236, 0.09);
+	border-bottom: rem(1) solid rgba(254, 237, 236, 0.09);
 	&__container {
 		display: flex;
 		align-items: center;
@@ -145,6 +145,7 @@
 			border-radius: 50%;
 			background-color: $whiteDarkerColor;
 			transition: transform .4s ease-in-out;
+			transform: scale(1);
 			&:nth-child(1) {
 				top: 0;
 				left: 0;
@@ -166,24 +167,26 @@
 	.header {
 		&.header__navigation_active {
 			.burger {
-				transform: rotate(45deg);
+				transform: rotate(-225deg);
 				span {
 					&:nth-child(1) {
-						transform:  translate(2px, 2px);
+						transform:  translate(rem(2), rem(2));
 					}
 					&:nth-child(2) {
-						transform:  translate(-2px, 2px);
+						transform:  translate(rem(-2), rem(2));
 					}
 					&:nth-child(3) {
-						transform:  translate(2px, -2px);
+						transform:  translate(rem(2), rem(-2));
 					}
 					&:nth-child(4) {
-						transform:  translate(-2px, -2px);
+						transform:  translate(rem(-2), rem(-2));
 					}
 				}
 			}
 			.header__navigation {
 				right: 0;
+				opacity: 1;
+				pointer-events: all;
 			}
 		}
 		&__counter {
@@ -196,7 +199,9 @@
 			height: 100%;
 			background-color: $bgColor;
 			padding: rem(100) rem(30) rem(30) rem(30);
-			transition: all 0.3s ease;
+			transition: all 0.4s ease-in-out;
+			opacity: 0;
+			pointer-events: none;
 			overflow: auto;
 			flex-direction: column;
 			row-gap: rem(38);
