@@ -8,7 +8,7 @@
 	background: linear-gradient(180deg, #ff7043 0%, #ff4929 100%);
 	color: $whiteColor;
 	font-size: rem(18);
-	line-height: 111%;
+	line-height: 125%;
 	text-align: center;
 	border-radius: rem(68);
 	text-transform: capitalize;
@@ -77,6 +77,6 @@
 
 @media screen and (max-width: $tablet) {
 	.button {
-		width: 140%;
+		width: clamp(rem(140), 70vw, rem(268));
 	}
 }
