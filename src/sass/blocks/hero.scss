@@ -4,6 +4,7 @@
 
 
 .hero {
+    position: relative;
 	&__container {
 		min-height: calc(100vh - rem(84));
 		display: flex;
@@ -85,6 +86,12 @@
 		color: $lightGrayColor;
 		line-height: 219%;
 	}
+    &__decor {
+        position: absolute;
+        top: -5%;
+        right: -5%;
+        animation: slowImageRotation 10s infinite ease-in-out;
+    }
 }
 .reviews-hero {
 	&__icon {
