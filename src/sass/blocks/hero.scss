@@ -5,7 +5,7 @@
 
 .hero {
 	&__container {
-		min-height: 100vh;
+		min-height: calc(100vh - rem(84));
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -20,7 +20,7 @@
 		font-family: $fontFamilyManrope;
 		font-size: clamp(rem(36), 4vw, rem(72));
 		line-height: 130%;
-		width: rem(890);
+		width: clamp(rem(300), 60vw, rem(890));
 		margin-top: rem(8);
 		font-weight: 400;
 	}
@@ -28,9 +28,9 @@
 	&__text {
 		margin-top: rem(8);
 		font-family: $fontFamilyManrope;
-		font-size: rem(20);
+		font-size: clamp(rem(16), 4vw, rem(20));
 		line-height: 175%;
-		width: rem(676);
+		width: clamp(rem(300), 60vw, rem(676));
 	}
 
 	&__button {

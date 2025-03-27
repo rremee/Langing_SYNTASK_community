@@ -3,6 +3,9 @@
 @use "../animation/animation.scss" as *;
 
 .header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
 	border-bottom: rem(1) solid rgba(254, 237, 236, 0.09);
 	&__container {
 		display: flex;
