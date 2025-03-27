@@ -14,12 +14,9 @@
 		text-align: center;
 	}
 
-	&__reviews {
-	}
-
 	&__title {
 		font-family: $fontFamilyManrope;
-		font-size: clamp(rem(36), 4vw, rem(72));
+		font-size: clamp(rem(36), 5vw, rem(72));
 		line-height: 130%;
 		width: clamp(rem(300), 60vw, rem(890));
 		margin-top: rem(8);
@@ -29,12 +26,9 @@
 	&__text {
 		margin-top: rem(8);
 		font-family: $fontFamilyManrope;
-		font-size: clamp(rem(16), 4vw, rem(20));
+		font-size: clamp(rem(16), 3vw, rem(20));
 		line-height: 175%;
 		width: clamp(rem(300), 60vw, rem(676));
-	}
-
-	&__button {
 	}
 
 	&__action {
@@ -88,9 +82,12 @@
 	}
     &__decor {
         position: absolute;
-        top: -5%;
+        top: calc(-5% - 3rem);
         right: -5%;
+        width: clamp(rem(170), 20vw, rem(352));
+        height: auto;
         animation: slowImageRotation 10s infinite ease-in-out;
+        pointer-events: none;
     }
 }
 .reviews-hero {
