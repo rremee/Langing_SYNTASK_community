@@ -21,13 +21,13 @@
 }
 
 @keyframes slowImageRotation {
-    0%, 75% {
+    0% {
         transform: scale(1) rotate(0deg);
     }
     50% {
         transform: scale(0.9) rotate(-10deg);
     }
     100% {
-        transform: scale(1) rotate(0);
+        transform: scale(1) rotate(0deg);
     }
 }
