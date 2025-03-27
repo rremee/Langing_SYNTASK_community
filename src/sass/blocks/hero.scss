@@ -1,0 +1,111 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../animation/animation.scss" as *;
+
+
+.hero {
+	&__container {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	&__reviews {
+	}
+
+	&__title {
+		font-family: $fontFamilyManrope;
+		font-size: clamp(rem(36), 4vw, rem(72));
+		line-height: 130%;
+		width: rem(890);
+		margin-top: rem(8);
+		font-weight: 400;
+	}
+
+	&__text {
+		margin-top: rem(8);
+		font-family: $fontFamilyManrope;
+		font-size: rem(20);
+		line-height: 175%;
+		width: rem(676);
+	}
+
+	&__button {
+	}
+
+	&__action {
+		margin: rem(28) 0 rem(8) 0;
+		display: flex;
+		align-items: center;
+		@media screen and (min-width: $tablet) {
+            &:hover {
+                .hero__button {
+                    background: #f7320f;
+                }
+                .hero__arrow {
+                    background: #f7320f;
+                    img {
+                        animation: shakeImage 0.2s infinite;
+                    }
+                    &::before {
+                        background: #f7320f;
+                    }
+                }
+            }
+        }
+	}
+	&__arrow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: rem(52);
+		height: rem(52);
+		cursor: pointer;
+		background: $mainOrangeColor;
+		border-radius: 50%;
+		position: relative;
+		transition: 0.5s all;
+		&::before {
+			content: "";
+			position: absolute;
+			width: rem(27);
+			height: rem(22);
+			background: $mainOrangeColor;
+			left: -30%;
+			top: 50%;
+			transform: translateY(-50%);
+            transition: .4s all;
+		}
+	}
+
+	&__trust {
+		color: $lightGrayColor;
+		line-height: 219%;
+	}
+}
+.reviews-hero {
+	&__icon {
+		font-size: rem(20);
+		color: $rateColor;
+		&:last-child {
+			background: linear-gradient(to right, $rateColor 50%, $darkGreyColor 50%);
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+	}
+
+	&__rate {
+		display: flex;
+		align-items: center;
+		gap: clamp(rem(4), 2vw, rem(8));
+		margin-bottom: rem(4);
+	}
+
+	&__text {
+		color: $lightGrayColor;
+	}
+}
+

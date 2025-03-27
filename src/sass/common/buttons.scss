@@ -5,7 +5,7 @@
 .button {
 	width: rem(268);
 	padding: rem(16) rem(32);
-	background: linear-gradient(180deg, #ff7043 0%, #ff4929 100%);
+	background: $mainOrangeColor;
 	color: $whiteColor;
 	font-size: rem(18);
 	line-height: 125%;
@@ -13,13 +13,15 @@
 	border-radius: rem(68);
 	text-transform: capitalize;
 	cursor: pointer;
-	transition: 0.4s all;
+	transition: .4s all;
+	position: relative;
 	img {
 		transition: 0.4s all;
 	}
+
 	@media screen and (min-width: $tablet) {
 		&:hover {
-			background: linear-gradient(180deg, #fa4e1a 0%, #a01b04 100%);
+			background: #f7320f;
 			img {
 				animation: shakeImage 0.2s infinite;
 			}
