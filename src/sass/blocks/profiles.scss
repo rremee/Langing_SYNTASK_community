@@ -14,7 +14,7 @@
 		align-items: center;
 		width: max-content;
 		flex-wrap: nowrap;
-		animation: marqueeImages 60s infinite linear;
+		animation: marqueeImages 100s infinite linear;
 		&:last-child {
 			animation-direction: reverse;
 		}
