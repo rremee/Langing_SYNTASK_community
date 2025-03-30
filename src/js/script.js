@@ -12,18 +12,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const profilesContainers = document.querySelectorAll(".profiles__items");
 
-    profilesContainers.forEach((profilesContainer) => {
-        const profilesChildren = [...profilesContainer.children];
-        const profilesChildrenNumber = profilesChildren.length;
+	profilesContainers.forEach((profilesContainer) => {
+		const profilesChildren = [...profilesContainer.children];
+		const profilesChildrenNumber = profilesChildren.length;
 
-        for (let i = 0; i < 2; i++) {
-            profilesChildren.forEach((item) => {
-                profilesContainer.appendChild(item.cloneNode(true));
-            });
+		for (let i = 0; i < 2; i++) {
+			profilesChildren.forEach((item) => {
+				profilesContainer.appendChild(item.cloneNode(true));
+			});
+		}
+
+		profilesContainer.addEventListener("animationiteration", () => {
+			profilesContainer.style.transform = "translateX(0)";
+		});
+	});
+
+	const video = document.querySelector(".media__video");
+	const videoPlayButton = document.querySelector(".play-button");
+
+	videoPlayButton.addEventListener("click", () => {
+		if (video.paused) {
+			video.play();
+			video.setAttribute("controls", "true");
+			videoPlayButton.style.display = "none";
+		} else {
+            video.pause();
         }
-
-        profilesContainer.addEventListener("animationiteration", () => {
-            profilesContainer.style.transform = "translateX(0)";
-        });
-    });
+	});
 });
