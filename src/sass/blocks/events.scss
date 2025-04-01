@@ -10,7 +10,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-bottom: rem(64);
+		margin-bottom: clamp(rem(32), 5vw, rem(64));
 	}
 
 	&__title {
@@ -117,5 +117,14 @@
 
 	&__button {
 		width: 100%;
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.events {
+		&__top {
+			flex-direction: column;
+			row-gap: clamp(rem(8), 5vw, rem(12));
+		}
 	}
 }

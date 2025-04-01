@@ -4,7 +4,7 @@
 .title {
 	color: $whiteColor;
 	font-family: "Manrope", sans-serif;
-	font-size: rem(48);
+	font-size: clamp(rem(28), 5vw, rem(48));
 	font-weight: 400;
 	line-height: normal;
 	&--center {

@@ -36,6 +36,6 @@ body {
 [class*="__container"] {
 	max-width: clamp(rem(320), 100vw - calc(2 * 15px), rem(1600));
 	margin: 0 auto;
-	padding: 0 clamp(rem(15), 10vw, rem(30));
+	padding: 0 clamp(rem(10), 2vw, rem(30));
 	width: 100%;
 }
