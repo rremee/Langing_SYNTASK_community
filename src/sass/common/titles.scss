@@ -3,7 +3,7 @@
 
 .title {
 	color: $whiteColor;
-	font-family: "Manrope", sans-serif;
+	font-family: $fontFamilyManrope;
 	font-size: clamp(rem(32), 5vw, rem(48));
 	font-weight: 400;
 	line-height: normal;

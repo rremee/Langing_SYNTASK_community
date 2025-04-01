@@ -1,0 +1,119 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../animation/animation.scss" as *;
+
+.build {
+	padding: clamp(rem(48), 5vw, rem(96)) 0;
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: clamp(rem(32), 5vw, rem(64));
+	}
+
+	&__picture {
+		padding: rem(39) 0;
+		flex: 1 1 50%;
+	}
+
+	&__image {
+		width: 100%;
+		border-radius: rem(30);
+		object-fit: cover;
+		height: rem(560);
+	}
+
+	&__content {
+		max-width: rem(560);
+		flex: 1 1 50%;
+	}
+
+	&__label {
+		margin-bottom: rem(12);
+	}
+
+	&__title {
+		margin-bottom: rem(12);
+	}
+
+	&__text {
+		font-size: rem(20);
+		line-height: 1.75;
+		color: rgba(242, 242, 242, 0.73);
+		margin-bottom: clamp(rem(16), 5vw, rem(32));
+	}
+
+	&__stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(rem(264), 1fr));
+		column-gap: clamp(rem(16), 5vw, rem(32));
+		row-gap: clamp(rem(24), 5vw, rem(48));
+		margin-bottom: rem(32);
+	}
+}
+.stat-build {
+	&__number {
+		font-weight: 500;
+		font-size: clamp(rem(32), 5vw, rem(60));
+		line-height: 1.2;
+		letter-spacing: -0.02em;
+		font-family: $fontFamilyManrope;
+		margin-bottom: rem(12);
+	}
+
+	&__name {
+		font-family: $fontFamilyInter;
+		font-weight: 600;
+		font-size: clamp(rem(14), 5vw, rem(18));
+		line-height: 1.55556;
+		color: $whiteDarkerColor;
+	}
+}
+
+@media screen and (max-width: $laptopL) {
+	.build {
+		&__stats {
+			grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+		}
+	}
+}
+// @media screen and (max-width: $laptop) {
+//     .build {
+//         &__stats {
+//             grid-template-columns: repeat(auto-fit, minmax(rem(164), 1fr));
+//         }
+//     }
+// }
+
+
+@media screen and (max-width: $laptop) {
+	.build {
+		&__container {
+            flex-direction: column;
+        }
+        &__picture {
+            width: 100%;
+            order: 2;
+        }
+	}
+}
+
+
+@media screen and (max-width: $tablet) {
+	.build {
+        
+		&__stats {
+			grid-template-columns: repeat(auto-fit, minmax(rem(128), 1fr));
+		}
+        &__picture {
+            padding: unset;
+        }
+		&__image {
+			height: rem(320);
+		}
+        &__button {
+            width: 100%;
+        }
+        
+	}
+}
