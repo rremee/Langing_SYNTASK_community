@@ -55,12 +55,16 @@
 			}
 		}
 	}
-	&--sign {
+	&--dark {
 		font-weight: 700;
 		font-size: 1rem;
 		padding: rem(16) rem(26);
 		background: $darkGreyColor;
 		width: rem(176);
+		&-small {
+			width: rem(129);
+			padding: rem(11) rem(26);
+		}
 		@media screen and (min-width: $tablet) {
 			&:hover {
 				background: $whiteDarkerColor;
@@ -73,6 +77,7 @@
 			width: rem(277);
 			color: $bgColor;
 			font-weight: 500;
+			padding: rem(11) rem(26);
 		}
 	}
 }
