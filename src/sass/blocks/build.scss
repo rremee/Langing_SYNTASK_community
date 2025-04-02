@@ -4,6 +4,7 @@
 
 .build {
 	padding: clamp(rem(48), 5vw, rem(96)) 0;
+	position: relative;
 	&__container {
 		display: flex;
 		align-items: center;
@@ -13,6 +14,7 @@
 
 	&__picture {
 		padding: rem(39) 0;
+		position: relative;
 		flex: 1 1 50%;
 	}
 
@@ -50,6 +52,16 @@
 		row-gap: clamp(rem(24), 5vw, rem(48));
 		margin-bottom: rem(32);
 	}
+	&__decor {
+		position: absolute;
+		width: clamp(rem(40), 35vw, rem(215));
+		height: auto;
+		bottom: -5%;
+		left: -6%;
+		animation: slowImageRotation 3.4s infinite ease-in-out;
+		pointer-events: none;
+		z-index: 10;
+	}
 }
 .stat-build {
 	&__number {
@@ -70,6 +82,42 @@
 	}
 }
 
+.marquee-build {
+	box-shadow: 0 4px 11px 5px rgba(0, 0, 0, 0.15);
+	background: $darkGreyColor;
+	width: 200vw;
+	padding: rem(25) rem(12);
+	overflow: hidden;
+	position: absolute;
+	user-select: none;
+	left: 50%;
+	bottom: -5%;
+	transform: translateX(-50%) rotate(10deg);
+	white-space: nowrap;
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		gap: rem(40);
+		animation: marqueeScroll 100s infinite linear;
+		width: max-content;
+	}
+	&__item {
+		font-weight: 500;
+		font-size: rem(17);
+		line-height: 1;
+		letter-spacing: 0.09em;
+		text-transform: uppercase;
+		span {
+			margin-left: rem(5);
+		}
+	}
+	&:last-child {
+		bottom: -2%;
+		transform: translateX(-50%) rotate(2deg);
+	}
+}
+
 @media screen and (max-width: $laptopL) {
 	.build {
 		&__stats {
@@ -77,43 +125,32 @@
 		}
 	}
 }
-// @media screen and (max-width: $laptop) {
-//     .build {
-//         &__stats {
-//             grid-template-columns: repeat(auto-fit, minmax(rem(164), 1fr));
-//         }
-//     }
-// }
-
 
 @media screen and (max-width: $laptop) {
 	.build {
 		&__container {
-            flex-direction: column;
-        }
-        &__picture {
-            width: 100%;
-            order: 2;
-        }
+			flex-direction: column;
+		}
+		&__picture {
+			width: 100%;
+			order: 2;
+		}
 	}
 }
 
-
 @media screen and (max-width: $tablet) {
 	.build {
-        
 		&__stats {
 			grid-template-columns: repeat(auto-fit, minmax(rem(128), 1fr));
 		}
-        &__picture {
-            padding: unset;
-        }
+		&__picture {
+			padding: unset;
+		}
 		&__image {
 			height: rem(320);
 		}
-        &__button {
-            width: 100%;
-        }
-        
+		&__button {
+			width: 100%;
+		}
 	}
 }
