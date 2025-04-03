@@ -42,7 +42,7 @@
 			font-weight: 700;
 			font-size: 1rem;
 			width: rem(141);
-			padding: rem(16) rem(26);
+			padding: rem(16) rem(20);
 		}
 		@media screen and (min-width: $tablet) {
 			&:hover {
@@ -58,12 +58,12 @@
 	&--dark {
 		font-weight: 700;
 		font-size: 1rem;
-		padding: rem(16) rem(26);
+		padding: rem(16) rem(20);
 		background: $darkGreyColor;
 		width: rem(176);
 		&-small {
 			width: rem(129);
-			padding: rem(11) rem(26);
+			padding: rem(11) rem(20);
 		}
 		@media screen and (min-width: $tablet) {
 			&:hover {
