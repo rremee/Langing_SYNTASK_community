@@ -3,7 +3,7 @@
 
 .stories {
 	padding-top: clamp(rem(100), 5vw, rem(230));
-
+	padding-bottom: clamp(rem(48), 5vw, rem(96));
 	&__title {
 		margin-bottom: clamp(rem(12), 3vw, rem(20));
 	}

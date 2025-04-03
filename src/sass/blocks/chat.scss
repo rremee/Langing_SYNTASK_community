@@ -1,0 +1,94 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+.chat {
+	background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.64) 0%,
+			rgba(21, 21, 21, 0.77) 82.78%
+		),
+		url("/src/img/chat/people.jpg") center center / cover no-repeat;
+	padding: clamp(rem(48), 5vw, rem(96)) 0;
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: clamp(rem(32), 6vw, rem(64));
+	}
+
+	&__content {
+		flex: 1 1 50%;
+	}
+
+	&__label {
+		margin-bottom: rem(12);
+	}
+
+	&__title {
+		margin-bottom: rem(20);
+	}
+
+	&__topics {
+		flex: 1 1 50%;
+	}
+}
+
+.topics-chat {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(rem(242), 1fr));
+	column-gap: clamp(rem(32), 6vw, rem(64));
+	row-gap: clamp(rem(16), 6vw, rem(32));
+	&__item {
+		font-family: $fontFamilyInter;
+	}
+
+	&__name {
+		font-weight: 600;
+		font-size: rem(20);
+		line-height: 1.5;
+		margin-bottom: rem(6);
+	}
+
+	&__tags {
+		font-weight: 500;
+		line-height: 1.5;
+		color: rgba(255, 255, 255, 0.85);
+	}
+}
+
+@media screen and (max-width: $laptopL) {
+	.topics-chat {
+		grid-template-columns: repeat(auto-fit, minmax(rem(190), 1fr));
+	}
+}
+@media screen and (max-width: $laptop) {
+	.topics-chat {
+		grid-template-columns: repeat(auto-fit, minmax(rem(134), 1fr));
+	}
+}
+@media screen and (max-width: $tablet) {
+	.chat {
+		&__container {
+			flex-direction: column;
+		}
+        &__content {
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+        }
+		&__topics {
+			align-self: stretch;
+            place-items: center center;
+		}
+	}
+    .topics-chat {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: $mobileM) {
+	.topics-chat {
+		grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
+	}
+}
