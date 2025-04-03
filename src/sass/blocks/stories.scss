@@ -1,0 +1,96 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+.stories {
+	padding-top: clamp(rem(100), 5vw, rem(230));
+
+	&__title {
+		margin-bottom: clamp(rem(12), 3vw, rem(20));
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: clamp(rem(16), 5vw, rem(20));
+		line-height: 1.75;
+		color: $whiteDarkerColor;
+		margin-bottom: clamp(rem(30), 5vw, rem(64));
+	}
+}
+
+.slider-stories {
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		gap: clamp(rem(20), 5vw, rem(32));
+	}
+
+	&__slide {
+		max-width: rem(360);
+		height: auto;
+	}
+
+	&__video {
+		position: relative;
+		aspect-ratio: 9 / 16;
+		video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: rem(8);
+		}
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		max-width: rem(184);
+		column-gap: rem(32);
+		margin-top: rem(64);
+	}
+
+	&__button-next {
+		span {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	&::before,
+	&::after {
+		display: none;
+	}
+}
+
+.play-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: clamp(rem(42), 10vw, rem(54));
+	height: clamp(rem(42), 10vw, rem(54));
+	background: url("/src/icons/stories-btn.svg") no-repeat center center;
+	background-size: contain;
+	border: none;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+	@media screen and (min-width: $tablet) {
+		&:hover {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+	}
+}
+
+
+@media screen and (max-width:$tablet) {
+    .slider-stories {
+        &__btns {
+            display: none;
+        }
+    }
+}

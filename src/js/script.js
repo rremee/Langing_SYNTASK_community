@@ -26,29 +26,56 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 	});
 
-	const video = document.querySelector(".media__video");
+	const videoMedia = document.querySelector(".media__video");
 	const videoPlayButton = document.querySelector(".play-button");
 
 	videoPlayButton.addEventListener("click", () => {
-		if (video.paused) {
-			video.play();
-			video.setAttribute("controls", "true");
+		if (videoMedia.paused) {
+			videoMedia.play();
+			videoMedia.setAttribute("controls", "true");
 			videoPlayButton.style.display = "none";
 		} else {
-			video.pause();
+			videoMedia.pause();
 		}
 	});
 
 	const marqueeContainers = document.querySelectorAll(".marquee-build__list");
 
 	marqueeContainers.forEach((marqueeContainer) => {
-        const items = [...marqueeContainer.children];
+		const items = [...marqueeContainer.children];
 
-        // Дублируем элементы дважды для плавного перехода
-        for (let i = 0; i < 2; i++) {
-            items.forEach((item) => {
-                marqueeContainer.appendChild(item.cloneNode(true));
-            });
-        }
-    });
+		for (let i = 0; i < 2; i++) {
+			items.forEach((item) => {
+				marqueeContainer.appendChild(item.cloneNode(true));
+			});
+		}
+	});
+
+	const storiesVideo = document.querySelectorAll(
+		".slider-stories__video video"
+	);
+	const storyVideoPlayButtons = document.querySelectorAll(".play-btn");
+
+	storyVideoPlayButtons.forEach((btn, index) => {
+		btn.addEventListener("click", () => {
+			const storyVideo = storiesVideo[index];
+
+			if (storyVideo.paused) {
+				storyVideo.play();
+				storyVideo.setAttribute("controls", "true");
+				btn.style.display = "none";
+			} else {
+				storyVideo.pause();
+			}
+		});
+	});
+
+	new Swiper(".slider-stories", {
+		loop: true,
+		navigation: {
+			nextEl: ".slider-stories__button-next",
+			prevEl: ".slider-stories__button-prev",
+		},
+		slidesPerView: "auto"
+	});
 });

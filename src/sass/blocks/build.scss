@@ -115,6 +115,9 @@
 	&:last-child {
 		bottom: -2%;
 		transform: translateX(-50%) rotate(2deg);
+		.marquee-build__list {
+			animation-direction: reverse;
+		}
 	}
 }
 
