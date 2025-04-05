@@ -3,29 +3,153 @@
 @use "../animation/animation.scss" as *;
 
 .world {
-    padding: clamp(rem(48), 5vw, rem(96)) 0;
-    &__container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-    }
+	padding: clamp(rem(48), 5vw, rem(96)) 0;
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 
-    &__label {
-        margin-bottom: rem(12);
-    }
+	&__label {
+		margin-bottom: rem(12);
+	}
 
-    &__title {
-        margin-bottom: clamp(rem(32), 6vw, rem(64));
-    }
+	&__title {
+		margin-bottom: clamp(rem(32), 6vw, rem(64));
+	}
 
-    &__map {
-    }
+	&__map {
+		position: relative;
+	}
 
-    &__img {
-        max-width: 100%;
-    }
+	&__img {
+		display: block;
+		max-width: 100%;
+		object-fit: cover;
+		height: auto;
+	}
+	&__point {
+		position: absolute;
+		width: clamp(rem(4), 2vw, rem(8));
+		height: clamp(rem(4), 2vw, rem(8));
+		background-color: $whiteColor;
+		border-radius: 50%;
+		transition: opacity 0.4s;
+		opacity: 0;
+		&:nth-child(odd) {
+			background-color: $mainOrangeColor;
+			&::before,
+			&::after {
+				background: $mainOrangeColor;
+			}
+		}
+		&:nth-child(2) {
+			left: 15%;
+			top: 36%;
+		}
+		&:nth-child(3) {
+			left: 20%;
+			top: 33%;
+		}
+		&:nth-child(4) {
+			left: 17%;
+			top: 22%;
+		}
+		&:nth-child(5) {
+			left: 26%;
+			top: 41%;
+		}
+		&:nth-child(6) {
+			left: 30%;
+			top: 63%;
+		}
+		&:nth-child(7) {
+			left: 34%;
+			top: 70%;
+		}
+		&:nth-child(8) {
+			left: 29%;
+			top: 81%;
+		}
+		&:nth-child(9) {
+			left: 52%;
+			top: 24%;
+		}
+		&:nth-child(10) {
+			left: 57%;
+			top: 18%;
+		}
+		&:nth-child(11) {
+			left: 51%;
+			top: 33%;
+		}
+		&:nth-child(12) {
+			left: 61%;
+			top: 28%;
+		}
+		&:nth-child(13) {
+			left: 72%;
+			top: 35%;
+		}
+		&:nth-child(14) {
+			left: 80%;
+			top: 28%;
+		}
+		&:nth-child(15) {
+			left: 75%;
+			top: 19%;
+		}
+		&:nth-child(16) {
+			left: 76%;
+			top: 55%;
+		}
+		&:nth-child(17) {
+			left: 48%;
+			top: 49%;
+		}
+		&:nth-child(18) {
+			left: 56%;
+			top: 57%;
+		}
+		&:nth-child(19) {
+			left: 54%;
+			top: 70%;
+		}
+		&:nth-child(20) {
+			left: 87%;
+			top: 79%;
+		}
+		&:nth-child(21) {
+			left: 95%;
+			top: 88%;
+		}
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			background: $whiteColor;
+			opacity: 0;
+		}
+		&::before {
+			width: clamp(rem(12), 3vw, rem(24));
+			height: clamp(rem(12), 3vw, rem(24));
+		}
+		&::after {
+			width: clamp(rem(20), 3vw, rem(40));
+			height: clamp(rem(20), 3vw, rem(40));
+		}
+	}
 }
-.label {
-}
-.title {
+
+.pulse {
+	opacity: 1;
+	&::before,
+	&::after {
+		animation: pointPulse 2.8s linear;
+		opacity: 1;
+	}
 }

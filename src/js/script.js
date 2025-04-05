@@ -76,6 +76,35 @@ document.addEventListener("DOMContentLoaded", () => {
 			nextEl: ".slider-stories__button-next",
 			prevEl: ".slider-stories__button-prev",
 		},
-		slidesPerView: "auto"
+		slidesPerView: "auto",
 	});
+
+	const points = document.querySelectorAll(".world__point");
+	const pulseDuration = 2800;
+	const pulseDelay = 1200;
+
+	function getRandomPoint(oldIndex) {
+		let newIndex;
+		do {
+			newIndex = Math.floor(Math.random() * points.length);
+		} while (newIndex === oldIndex);
+		return newIndex;
+	}
+
+	let currentIndex = -1;
+
+	function animateNext() {
+		currentIndex = getRandomPoint(currentIndex);
+		const currentPoint = points[currentIndex];
+
+		currentPoint.classList.add("pulse");
+
+		setTimeout(() => {
+			currentPoint.classList.remove("pulse");
+		}, pulseDuration);
+
+		setTimeout(animateNext, pulseDelay);
+	}
+
+	animateNext();
 });
