@@ -1,0 +1,37 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+.join {
+	padding-top: clamp(rem(44), 4vw, rem(64));
+	padding-bottom: clamp(rem(28), 4vw, rem(48));
+	background: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0.64) 0%,
+			rgba(21, 21, 21, 0.77) 82.78%
+		),
+		url("/src/img/join/people-join.jpg") center center / cover no-repeat;
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__title {
+		margin-bottom: clamp(rem(24), 5vw, rem(48));
+		max-width: clamp(rem(520), 40vw, rem(768));
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: rem(12);
+	}
+}
+
+@media screen and (max-width: $tablet) {
+	.join {
+		&__actions {
+			flex-direction: column;
+		}
+	}
+}
