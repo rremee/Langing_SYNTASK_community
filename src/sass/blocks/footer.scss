@@ -1,0 +1,56 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+
+.footer {
+	&__container {
+		padding: clamp(rem(16), 5vw, rem(22)) clamp(rem(18), 3vw, rem(54));
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+        gap: rem(10);
+	}
+
+	&__logo {
+		line-height: 145%;
+		letter-spacing: 0.11em;
+		text-transform: uppercase;
+		color: $whiteDarkerColor;
+		position: relative;
+		padding-left: rem(9);
+		transition: 0.4s all;
+		&::before {
+			content: "";
+			position: absolute;
+			width: rem(6);
+			height: rem(6);
+			border-radius: 50%;
+			background: $mainOrangeColor;
+			top: 50%;
+			left: rem(-1);
+			transform: translateY(-50%);
+			transition: 0.4s all;
+		}
+		@media screen and (min-width: $tablet) {
+			&:hover {
+				color: $mainOrangeColor;
+				&::before {
+					left: rem(-5);
+				}
+			}
+		}
+	}
+
+	&__contact {
+		a {
+			color: #3ff3ff;
+		}
+	}
+}
+
+@media screen and (max-width: $mobileL) {
+    .footer {
+        &__container {
+            flex-direction: column;
+        }
+    }
+}
