@@ -1,0 +1,40 @@
+@use "../base/vars.scss" as *;
+@use "../libs/pxtorem.scss" as *;
+@use "../animation/animation.scss" as *;
+
+.avatars {
+	&__wrapper {
+        padding: rem(16) 0;
+		overflow: hidden;
+		width: 100vw;
+		pointer-events: none;
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		width: max-content;
+		flex-wrap: nowrap;
+		column-gap: clamp(rem(12), 4vw, rem(24));
+		animation: marqueeImages 60s infinite linear;
+		&:last-child {
+			animation-direction: reverse;
+		}
+        &:not(:last-child) {
+            margin-bottom: rem(24);
+        }
+	}
+
+	&__item {
+		width: rem(40);
+		height: rem(40);
+        flex-shrink: 0;
+	}
+
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		border-radius: 50%;
+	}
+}

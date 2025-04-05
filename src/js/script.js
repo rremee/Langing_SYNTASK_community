@@ -107,4 +107,20 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 
 	animateNext();
+
+	const avatarsContainers = document.querySelectorAll('.avatars__items');
+
+	avatarsContainers.forEach((avatarsContainer) => {
+		const avatarsChildren = [...avatarsContainer.children];
+
+		for (let i = 0; i < 2; i++) {
+			avatarsChildren.forEach((item) => {
+				avatarsContainer.appendChild(item.cloneNode(true));
+			});
+		}
+
+		avatarsContainer.addEventListener("animationiteration", () => {
+			avatarsContainer.style.transform = "translateX(0)";
+		});
+	});
 });
