@@ -1,6 +1,14 @@
 "use strict";
 
+import 'swiper/css';
+import 'swiper/css/navigation';
 import "/src/sass/style.scss";
+import 'flag-icons/css/flag-icons.min.css';
+
+import Swiper from 'swiper';
+import { Navigation } from 'swiper/modules';
+
+Swiper.use([Navigation]);
 
 document.addEventListener("DOMContentLoaded", () => {
 	const headerNav = document.querySelector(".header");
@@ -71,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 
 	new Swiper(".slider-stories", {
+		modules: [Navigation],
 		loop: true,
 		navigation: {
 			nextEl: ".slider-stories__button-next",
