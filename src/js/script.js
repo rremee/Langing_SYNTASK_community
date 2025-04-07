@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const options = {
 		root: null,
 		rootMargin: "0px 0px 0px 0px",
-		threshold: 0.2,
+		threshold: 0.01,
 	}
 	
 	const callback = (entries, observer) => {

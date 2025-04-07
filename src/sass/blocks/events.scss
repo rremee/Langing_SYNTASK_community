@@ -1,5 +1,6 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
 
 .events {
 	padding-bottom: clamp(rem(48), 5vw, rem(96));
@@ -114,6 +115,32 @@
 		&__top {
 			flex-direction: column;
 			row-gap: clamp(rem(8), 5vw, rem(12));
+		}
+	}
+}
+
+.events--anim {
+	&.--animate {
+		.events__title {
+			@include observerAnimate(fadeInLeft, 0.5s);
+		}
+		.events__button {
+			@include observerAnimate(fadeInRight, 0.5s);
+		}
+		.events__item {
+			@include observerAnimate(rotateIn, 0.5s);
+			&:nth-child(1) {
+				animation-delay: 0.3s;
+			}
+			&:nth-child(2) {
+				animation-delay: 0.4s;
+			}
+			&:nth-child(3) {
+				animation-delay: 0.5s;
+			}
+			&:nth-child(4) {
+				animation-delay: 0.6s;
+			}
 		}
 	}
 }
