@@ -1,0 +1,4 @@
+@mixin observerAnimate($name, $duration: 0.5s, $delay: 0s, $effect: ease-in-out) {
+    opacity: 0;
+    animation: $name $duration $effect $delay forwards;
+}
