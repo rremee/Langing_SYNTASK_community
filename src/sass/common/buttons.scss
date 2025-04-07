@@ -18,7 +18,17 @@
 	img {
 		transition: 0.4s all;
 	}
-
+	&:focus {
+		background: #f7320f;
+		outline: none;
+	}
+	&:active {
+		background: #c82d12;
+	}
+	&:disabled {
+		background: $lightGrayColor;
+		cursor: not-allowed;
+	}
 	@media screen and (min-width: $tablet) {
 		&:hover {
 			background: #f7320f;
@@ -38,6 +48,12 @@
 				rgba(255, 255, 255, 0) 84%
 			),
 			rgb(87, 101, 242);
+		&:focus {
+			background: #6030d8;
+		}
+		&:active {
+			background: #5502b4;
+		}
 		&-small {
 			font-weight: 700;
 			font-size: 1rem;
@@ -61,6 +77,12 @@
 		padding: rem(16) rem(20);
 		background: $darkGreyColor;
 		width: rem(176);
+		&:focus {
+			background: #443f3f;
+		}
+		&:active {
+			background: #272121;
+		}
 		&-small {
 			width: rem(129);
 			padding: rem(11) rem(20);
@@ -78,6 +100,14 @@
 			color: $bgColor;
 			font-weight: 500;
 			padding: rem(11) rem(26);
+			&:focus {
+				background: $whiteColor;
+				box-shadow: 3px 2px 14px 1px rgba(255, 255, 255, 0.6);
+			}
+			&:active {
+				background: $whiteColor;
+				transform: scale(0.95);
+			}
 			@media screen and (min-width: $tablet) {
 				&:hover {
 					background: $mainOrangeColor;
