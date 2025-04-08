@@ -1,5 +1,6 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
+@use "../base/mixins.scss" as *;
 
 .join {
 	padding-top: clamp(rem(44), 4vw, rem(64));
@@ -32,6 +33,17 @@
 	.join {
 		&__actions {
 			flex-direction: column;
+		}
+	}
+}
+
+.join--anim {
+	&.--animate {
+		.join__title {
+			@include observerAnimate(fadeInDown, 0.5s);
+		}
+		.join__actions {
+			@include observerAnimate(fadeInDown, 0.5s, 0.2s);
 		}
 	}
 }

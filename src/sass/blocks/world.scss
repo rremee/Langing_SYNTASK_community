@@ -1,6 +1,7 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
 @use "../animation/animation.scss" as *;
+@use "../base/mixins.scss" as *;
 
 .world {
 	padding: clamp(rem(48), 5vw, rem(96)) 0;
@@ -151,5 +152,16 @@
 	&::after {
 		animation: pointPulse 2.8s linear;
 		opacity: 1;
+	}
+}
+
+.world--anim {
+	&.--animate {
+		.world__label {
+			@include observerAnimate(fadeInUp, 0.5s);
+		}
+		.world__title {
+			@include observerAnimate(fadeInUp, 0.5s, 0.1s);
+		}
 	}
 }

@@ -6,7 +6,7 @@
 .hero {
 	position: relative;
 	&__container {
-		min-height: calc(100vh - rem(82));
+		min-height: calc(100dvh - rem(82));
 		display: flex;
 		flex-direction: column;
 		align-items: center;

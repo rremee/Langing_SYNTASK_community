@@ -1,6 +1,7 @@
 @use "../base/vars.scss" as *;
 @use "../libs/pxtorem.scss" as *;
 @use "../animation/animation.scss" as *;
+@use "../base/mixins.scss" as *;
 
 .chat {
 	background: linear-gradient(
@@ -101,5 +102,37 @@
 @media screen and (max-width: $mobileM) {
 	.topics-chat {
 		grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
+	}
+}
+
+.chat--anim {
+	&.--animate {
+		.chat__label {
+			@include observerAnimate(fadeInLeft, 0.5s);
+		}
+		.chat__title {
+			@include observerAnimate(fadeInLeft, 0.5s, 0.1s);
+		}
+		.chat__button {
+			@include observerAnimate(fadeInLeft, 0.5s, 0.2s);
+		}
+		.topics-chat__item {
+			@include observerAnimate(zoomIn, 0.5s, 0.5s);
+			&:nth-child(2) {
+				animation-delay: 0.6s;
+			}
+			&:nth-child(3) {
+				animation-delay: 0.7s;
+			}
+			&:nth-child(4) {
+				animation-delay: 0.8s;
+			}
+			&:nth-child(5) {
+				animation-delay: 0.9s;
+			}
+			&:nth-child(6) {
+				animation-delay: 1s;
+			}
+		}
 	}
 }

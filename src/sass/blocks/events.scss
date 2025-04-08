@@ -127,19 +127,19 @@
 		.events__button {
 			@include observerAnimate(fadeInRight, 0.5s);
 		}
-		.events__item {
+		.item-events {
 			@include observerAnimate(rotateIn, 0.5s);
 			&:nth-child(1) {
-				animation-delay: 0.3s;
+				animation-delay: 0.2s;
 			}
 			&:nth-child(2) {
-				animation-delay: 0.4s;
+				animation-delay: 0.3s;
 			}
 			&:nth-child(3) {
-				animation-delay: 0.5s;
+				animation-delay: 0.4s;
 			}
 			&:nth-child(4) {
-				animation-delay: 0.6s;
+				animation-delay: 0.5s;
 			}
 		}
 	}
