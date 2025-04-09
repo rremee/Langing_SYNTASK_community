@@ -43,7 +43,7 @@
 
 	&__contact {
 		a {
-			color: #3ff3ff;
+			color: $linkContactColor;
 			transition: .4s all;
 			&:hover {
 				color: $mainOrangeColor;

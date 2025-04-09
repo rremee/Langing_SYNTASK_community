@@ -19,11 +19,11 @@
 		transition: 0.4s all;
 	}
 	&:focus {
-		background: #f7320f;
+		background: $mainOrangeHoverColor;
 		outline: none;
 	}
 	&:active {
-		background: #c82d12;
+		background: $buttonMainActiveColor;
 	}
 	&:disabled {
 		background: $lightGrayColor;
@@ -31,7 +31,7 @@
 	}
 	@media screen and (min-width: $tablet) {
 		&:hover {
-			background: #f7320f;
+			background: $mainOrangeHoverColor;
 			img {
 				animation: shakeImage 0.2s infinite;
 			}
@@ -49,10 +49,10 @@
 			),
 			rgb(87, 101, 242);
 		&:focus {
-			background: #6030d8;
+			background: $buttonDiscordFocusColor;
 		}
 		&:active {
-			background: #5502b4;
+			background: $buttonDiscordActiveColor;
 		}
 		&-small {
 			font-weight: 700;
@@ -78,10 +78,10 @@
 		background: $darkGreyColor;
 		width: rem(176);
 		&:focus {
-			background: #443f3f;
+			background: $buttonDarkFocusColor;
 		}
 		&:active {
-			background: #272121;
+			background: $buttonDarkActiveColor;
 		}
 		&-small {
 			width: rem(129);
